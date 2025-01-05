@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Layout</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        display: grid;
+        grid-template-areas:
+          "header header"
+          "aside main"
+          "footer footer";
+        grid-template-columns: 1fr 2fr; /* Two columns: 1/3 and 2/3 */
+        grid-template-rows: auto 1fr auto; /* Three rows */
+        height: 100vh;
+        gap: 10px;
+        background: linear-gradient(purple, rgb(189, 189, 247));
+      }
+      header {
+        grid-area: header;
+        /* background-color: #f2f8f2; */
+        padding: 10px;
+        /* text-align: center; */
+        /* border: 2px solid black; */
+      }
+      aside {
+        grid-area: aside;
+        background-color: white;
+        color: rgb(18, 17, 17);
+        padding: 10px;
+        border: 2px solid black;
+      }
+      main {
+        grid-area: main;
+        background-color: #f6faf9;
+        padding: 10px;
+        border: 2px solid black;
+      }
+      footer {
+        grid-area: footer;
+        background-color: #f9f8f8;
+        text-align: center;
+        padding: 10px;
+        border: 2px solid black;
+      }
+      #Home {
+        border-bottom: 2px solid black;
+        padding: 10px;
+        /* color: black; */
+        text-align: center;
+      }
+      #Offer {
+        border-bottom: 2px solid black;
+        padding: 10px;
+        /* color: black; */
+        text-align: center;
+        position: relative;
+      }
+      a {
+        color: black;
+      }
+
+      .sub-menu {
+        display: none;
+        position: absolute;
+        left: 100%;
+        top: -1.5px;
+        background-color: white;
+        /* padding: 5px; */
+        width: 180px;
+        line-height: 18px;
+        list-style: none;
+      }
+      #Offer:hover .sub-menu {
+        display: block;
+        position: absolute;
+      }
+      .sub-menu li {
+        border-bottom: 2px solid black;
+        padding: 10px;
+      }
+      .newyear {
+        border-top: 2px solid black;
+        border-right: 2px solid black;
+        /* padding-top: 10px; */
+      }
+      .christmas {
+        border-left: 2px solid black;
+        border-right: 2px solid black;
+        /* padding-top: 15px; */
+      }
+
+      .logo {
+        width: 70px;
+        height: auto;
+        margin-left: 0px;
+        border-radius: 30px;
+        background: transparent;
+      }
+      header h2 {
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        text-align: center;
+        width: 50px;
+        font-size: 19px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <!-- <h1>Header Section</h1> -->
+      <img class="logo" src="OIP (1).jpg" alt="" />
+      <h2>Porsche</h2>
+    </header>
+    <aside>
+      <h2>Sidebar menu</h2>
+      <ul class="menu">
+        <li id="Home"><a href="#home">Home</a></li>
+        <li id="Home"><a href="#aboutus">About Us</a></li>
+        <li id="Home"><a href="#toprate">Top rates</a></li>
+        <li id="Offer">
+          <a href="#offer">Offer</a>
+          <ul class="sub-menu">
+            <li class="newyear"><a href="newyear">New Year Offer</a></li>
+            <li class="christmas"><a href="christmas">Christmas Offer</a></li>
+          </ul>
+        </li>
+        <li id="Home"><a href="#news">News</a></li>
+      </ul>
+    </aside>
+
+    <main>
+      <h2>Main Content</h2>
+    </main>
+    <footer>
+      <p>Footer Section</p>
+    </footer>
+  </body>
+</html>
